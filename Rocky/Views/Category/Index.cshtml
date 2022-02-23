@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Rocky.Models.Category>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index CatS</h1>
+<div class="container">
+    if(Model.Count() >0)
+  {
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Categoryname
+                </th>
+                <th>
+                    Display order
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+           
+            <tr>
+            <td>obj.Name</td>
+            <td>obj.DisplayOrder </td></tr>
+            
+        }
+            </tbody>
+        </table>
+            }
+            else
+            {
+                <p>No category exists.</p>
+            }
+</div>
